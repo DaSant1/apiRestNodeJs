@@ -9,16 +9,32 @@ const isRoleValid= async(rol='')=>{
     }
 }
 
+const existeRol=async(rol='')=>{
+    try{
+        const rolExiste= await Role.findOne({rol});
+        if(rolExiste){
+            throw new Error("El rol ya existe en el sistema");
+        }
+    }catch(error){
+            console.log("Error al buscar los roles disponibles");
+    }
+    
+}
 
 /**
  * 
  */
 const existeEmail=async(correo='')=>{
     //se verifica si el email ingresado ya existe en los registros
-    const existeEmail= await Usuario.findOne({correo});
-    if(existeEmail){
-        throw new Error("El correo ingresado ya existe");
+    try{
+        const emailExiste = await Usuario.findOne({ correo });
+        if(emailExiste){
+            throw new Error("El correo ingresado ya existe");
+        }
+    }catch(error){
+        throw new Error("Error en el acceso a los datos");
     }
+    
 }
 
 const existeUsuarioById=async(id)=>{
@@ -31,5 +47,6 @@ const existeUsuarioById=async(id)=>{
 module.exports={
     existeEmail,
     existeUsuarioById,
-    isRoleValid
+    isRoleValid,
+    existeRol
 }

@@ -39,7 +39,7 @@ const createNewUsuario= async(req,res=response)=>{
         await usuarioModel.save();
 
         res.json({
-            usuario
+            usuarioModel
         })
 }
 
