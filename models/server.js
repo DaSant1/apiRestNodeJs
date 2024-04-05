@@ -8,7 +8,8 @@ class Server{
         this.app=express();
         this.port=process.env.PORT;
         this.usuariosPath='/api/Usuarios';
-        this.authPath='/api/Role';
+        this.rolePath='/api/Role';
+        this.authPath='/api/auth';
         //conectarse con la base de datos
         this.conectarDb();
 
@@ -21,7 +22,12 @@ class Server{
 
 
     async conectarDb(){
-        await dbConnection();
+        try{
+            await dbConnection();
+
+        }catch(error){
+            console.log("Error al acceder a la base de datos");
+        }
     }
 
     middlewares(){
@@ -38,7 +44,8 @@ class Server{
     routes(){
         try{
             this.app.use(this.usuariosPath,require('../routes/Usuario'));
-            this.app.use(this.authPath,require('../routes/Role'));
+            this.app.use(this.rolePath,require('../routes/Role'));
+            this.app.use(this.authPath,require('../routes/auth'));
         }catch(error){
             console.log("tenemos un error en el acceso a las rutas");
             console.log("El error es  "+ error);
