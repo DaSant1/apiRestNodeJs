@@ -27,4 +27,6 @@ router.post('/createRol',[
     validarCampos
 ],createNewRol);
 
+
+
 module.exports=router;
