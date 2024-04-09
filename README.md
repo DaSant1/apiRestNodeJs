@@ -1,14 +1,14 @@
 # apiRestNodeJs
 Api Rest usando JWT y Mongo DB
 
-##Caracteristicas principales
+## Caracteristicas principales
 - Creación de Usuarios
 - Gestion de Roles
 - Creación de jwt Jason wb
-##Requisitos
+## Requisitos
 - npm>=10.1
 - NodeJs
-#Paquetes necesarios para su funcionamiento
+## Paquetes necesarios para su funcionamiento
 - npm install dotenv
 - npm install express-validator
 - npm install express
