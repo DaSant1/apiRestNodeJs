@@ -4,7 +4,7 @@ Api Rest usando JWT y Mongo DB
 ## Caracteristicas principales
 - Creación de Usuarios
 - Gestion de Roles
-- Creación de jwt Jason wb
+- Creación de jwt Json Web Tokens
 ## Requisitos
 - npm>=10.1
 - NodeJs
