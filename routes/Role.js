@@ -3,7 +3,7 @@ const {check}=require('express-validator');
 const {validarCampos}=require('../middlewares/validar-campo');
 const {isRoleValid,existeRol}= require('../Helpers/db-validators');
 const {createNewRol,getRols}= require('../controllers/rol');
-const {validarJWT }=require('../middlewares')
+const {validarJWT }=require('../middlewares/')
 const router= Router();
 router.post('/createRol',[
     validarJWT,
